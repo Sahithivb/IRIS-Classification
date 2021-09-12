@@ -1,10 +1,11 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 
 <head>
 	<meta charset="UTF-8">
-	<title>Demo</title>
+	<title>IRIS Classification</title>
 	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link rel="icon" href=".\favicon.ico" type="image/x-icon">
 </head>
 
 	<body>
@@ -13,7 +14,7 @@
 		<img src="https://miro.medium.com/max/1000/1*nfK3vGZkTa4GrO7yWpcS-Q.png" width ="500">
 	
 		<!-- Define a form to take input from user -->
-        <form action="{{ url_for('predict')}}" method="post">
+<!--         <form action="{{ url_for('predict')}}" method="post">
 			<label for="SL">SL</label>
 			<input type="text" name="sepal_length" required="required" />
 			<label for="SW">SW</label>
@@ -30,6 +31,82 @@
 			{{ OUTPUT }}
 		</H2>
 		</div>
+	</body> -->
+
+<!-- </html> --> -->
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>IRIS Classification</title>
+	<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+	<link rel="icon" href=".\favicon.ico" type="image/x-icon">
+</head>
+<script type="text/javascript">
+					function rangeSlide(value) {
+						document.getElementById('rangeValue').innerHTML = value;
+					}
+					function rangeSlide1(value) {
+						document.getElementById('rangeValue1').innerHTML = value;
+					}
+					function rangeSlide2(value) {
+						document.getElementById('rangeValue2').innerHTML = value;
+					}
+					function rangeSlide3(value) {
+						document.getElementById('rangeValue3').innerHTML = value;
+					}
+</script>
+	<body>
+		<div class="login">
+		<h1>IRIS Flower Prediction</h1>
+		<img src=".\iris.png" width ="500">
+	
+		<!-- Define a form to take input from user -->
+        <form action="{{ url_for('predict')}}" method="post">
+		<table>
+			<tr>
+			<td> <label for="SL">Sepal Length</label></td>
+			<td>
+				 <div>
+					<Input class="range" type="range" name "" value="0" min="0" max="10" step = "0.1" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input><span id="rangeValue">0</span>
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td><label for="SW">Sepal Width</label></td>
+			<td><div>
+					<Input class="range1" type="range" name "" value="0" min="0" max="10" step = "0.1" onChange="rangeSlide1(this.value)" onmousemove="rangeSlide1(this.value)"></Input><span id="rangeValue1">0</span>
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td><label for="PL">Petal Length</label></td>
+			<td><div>
+					<Input class="range2" type="range" name "" value="0" min="0" max="10" step = "0.1" onChange="rangeSlide2(this.value)" onmousemove="rangeSlide2(this.value)"></Input><span id="rangeValue2">0</span>
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td><label for="PW">Petal Width</label></td>
+			<td><div>
+					<Input class="range3" type="range" name "" value="0" min="0" max="10" step = "0.1" onChange="rangeSlide3(this.value)" onmousemove="rangeSlide3(this.value)"></Input><span id="rangeValue3">0</span>
+				</div>
+			</td>
+			</tr>
+			<tr>
+			<td><button type="submit">Predict</button></td>
+			</tr>
+		</table>
+		</form>
+
+		<br>
+		<H2>
+			{{ OUTPUT }}
+		</H2>
+		</div>
 	</body>
 
 </html>
+
