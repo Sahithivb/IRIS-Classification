@@ -26,7 +26,8 @@ def predict():
 	PW = request.form.get('petal_width')
 	Input = [[SL,SW,PL,PW]]
 	prediction = model.predict(Input)[0]
-	return render_template('index.html', OUTPUT=str(prediction))
+	result_st = 'Sepal Length: {SL:}, Sepal Width: {SW:}, Petal Length: {PL:}, Petal Width: {PW:} Prediction: {P:}'.format(SL = SL,SW = SW, PW = PW, PL = PL, P = prediction)
+	return render_template('index.html', OUTPUT = result_st)
 
 if __name__ == "__main__":
     app.run(debug=True)
